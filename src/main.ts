@@ -1,14 +1,23 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import pinia from '@/stores'
 
 import App from './App.vue'
 import router from './router'
 
-import './assets/main.css'
+import 'normalize.css/normalize.css'
+import '@/styles/index.scss'
 
-const app = createApp(App)
+// import ElementPlus from 'element-plus'
+// import 'element-plus/dist/index.css'
 
-app.use(createPinia())
-app.use(router)
+import element from '@/plugins/element'
+import initSvgIcon from '@/icon/svg'
+import 'virtual:svg-icons-register'
 
-app.mount('#app')
+createApp(App)
+  // .use(ElementPlus)
+  .use(element)
+  .use(pinia)
+  .use(router)
+  .use(initSvgIcon)
+  .mount('#app')
