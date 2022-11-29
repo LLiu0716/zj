@@ -5,6 +5,8 @@ import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-notification.css'
 import 'element-plus/theme-chalk/el-message-box.css'
 
+export type Size = 'default' | 'large' | 'small'
+
 export default (app: App): void => {
   app.config.globalProperties.$message = ElMessage
   app.config.globalProperties.$notify = ElNotification

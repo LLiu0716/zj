@@ -8,6 +8,7 @@ export default {
 import SideBar from './components/sidebar/Side-bar.vue'
 import AppMain from './components/AppMain.vue'
 import NavBar from './components/NavBar.vue'
+import TagsView from './components/TagsView.vue'
 </script>
 
 <template>
@@ -17,7 +18,9 @@ import NavBar from './components/NavBar.vue'
     </section>
     <section class="page-section-main">
       <NavBar class="page-nav">nav</NavBar>
-      <aside class="page-aside">aside</aside>
+      <aside class="page-aside">
+        <TagsView />
+      </aside>
       <article class="page-article">
         <AppMain />
       </article>
@@ -42,17 +45,14 @@ import NavBar from './components/NavBar.vue'
 
   &-section-main {
     flex: 1;
-    background-color: aqua;
   }
 
   &-nav {
     height: 50px;
-    background-color: #f00;
   }
 
   &-aside {
     height: 34px;
-    background-color: #ff0;
   }
 
   &-article {

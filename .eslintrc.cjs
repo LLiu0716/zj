@@ -19,6 +19,7 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
+    'vue/multi-word-component-names': 0,
     '@typescript-eslint/no-var-requires': 0,
     'prettier/prettier': 2,
     eqeqeq: 2,

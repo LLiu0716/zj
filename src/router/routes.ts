@@ -18,7 +18,8 @@ export const routes: RouteRecordRaw[] = [
         component: () => import(/* webpackChunkName: "dashboard" */ '@/views/dashboard/index.vue'),
         meta: {
           title: 'Dashboard',
-          icon: 'dashboard'
+          icon: 'dashboard',
+          affix: true
         }
       }
     ]
@@ -69,24 +70,27 @@ export const routes: RouteRecordRaw[] = [
     children: [
       {
         path: 'menu',
+        name: 'Menu Management',
         component: () => import(/* webpackChunkName: "menu" */ '@/views/system/menu.vue'),
         meta: {
           title: 'Menu Management',
-          hidden: true,
+          hidden: false,
           icon: 'list'
         }
       },
       {
         path: 'role',
+        name: 'Role Management',
         component: () => import(/* webpackChunkName: "role" */ '@/views/system/role.vue'),
         meta: {
           title: 'Role Management',
-          hidden: true,
+          hidden: false,
           icon: 'list'
         }
       },
       {
         path: 'user',
+        name: 'User Management',
         component: () => import(/* webpackChunkName: "user" */ '@/views/system/user.vue'),
         meta: {
           title: 'User Management',
@@ -111,18 +115,40 @@ export const routes: RouteRecordRaw[] = [
     ]
   },
   {
+    path: '/redirect',
+    component: Layout,
+    meta: {
+      hidden: true
+    },
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/redirect/index.vue')
+      }
+    ]
+  },
+  {
     path: '/about',
     name: 'about',
-    component: () => import(/* webpackChunkName: "AboutView" */ '@/views/AboutView.vue')
+    component: () => import(/* webpackChunkName: "AboutView" */ '@/views/AboutView.vue'),
+    meta: {
+      hidden: true
+    }
   },
   {
     path: '/err',
     name: 'error',
-    component: () => import(/* webpackChunkName: "error" */ '@/views/error/index.vue')
+    component: () => import(/* webpackChunkName: "error" */ '@/views/error/index.vue'),
+    meta: {
+      hidden: true
+    }
   },
   {
     path: '/:pathMatch(.*)',
     name: '404',
-    component: () => import(/* webpackChunkName: "error" */ '@/views/error/index.vue')
+    component: () => import(/* webpackChunkName: "error" */ '@/views/error/index.vue'),
+    meta: {
+      hidden: true
+    }
   }
 ]

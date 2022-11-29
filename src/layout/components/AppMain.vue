@@ -1,13 +1,22 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router'
+import { useTagsView } from '@/stores/tagsView'
+import { storeToRefs } from 'pinia'
+import { computed } from 'vue'
+
 const route = useRoute()
+const store = useTagsView()
+
+const { cachedViews } = storeToRefs(store)
+
+const includes = computed(() => cachedViews.value as string[])
 </script>
 
 <template>
   <div class="app-main">
     <RouterView v-slot="{ Component }">
       <transition name="fade-transform" mode="out-in">
-        <KeepAlive>
+        <KeepAlive :include="includes">
           <component :is="Component" :key="route.path" />
         </KeepAlive>
       </transition>

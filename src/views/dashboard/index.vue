@@ -15,6 +15,7 @@ export default {
     <br />
     缓存测试 <input type="text" />
     <el-button>按钮</el-button>
+    <el-date-picker />
   </div>
 </template>
 

@@ -9,3 +9,4 @@ export default pinia
 
 export * from './app'
 export * from './counter'
+export * from './tagsView'

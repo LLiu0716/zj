@@ -11,7 +11,7 @@ import '@/styles/index.scss'
 // import 'element-plus/dist/index.css'
 
 import element from '@/plugins/element'
-import initSvgIcon from '@/icon/svg'
+import initSvgIcon from '@/icon'
 import 'virtual:svg-icons-register'
 
 createApp(App)
