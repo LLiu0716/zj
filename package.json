@@ -13,6 +13,10 @@
     "svgo": "svgo -f src/icon/svg --config=src/icon/svgo.config.cjs",
     "commit": "git cz"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lliu0716/zj.git"
+  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
@@ -28,6 +32,7 @@
     "@element-plus/icons-vue": "^2.0.10",
     "element-plus": "^2.2.21",
     "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.1",
     "pinia": "^2.0.21",
@@ -42,6 +47,7 @@
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.0",
     "@types/node": "^16.11.56",
+    "@types/nprogress": "^0.2.0",
     "@types/path-browserify": "^1.0.0",
     "@vitejs/plugin-vue": "^3.0.3",
     "@vitejs/plugin-vue-jsx": "^2.0.1",
